@@ -1,0 +1,72 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+body{
+	font-family: "Helvetica Neue",Helvetica,"Hiragino Sans GB","Segoe UI","Microsoft Yahei",Tahoma,Arial,STHeiti,sans-serif;
+    color: #9b9b9b;
+    background: #eee;
+}
+div{
+    display: block;
+}
+a{
+    text-decoration: none;
+}
+img{
+    border: 0;
+}
+
+
+
+header{
+    height: 50px;
+    background: #dddddd;
+}
+div#nav_header{
+    height: 50px;
+    width: 1100px;
+    margin: auto;
+}
+
+div#nav_header h1{
+    background-image: url("/image/logo.png");
+    height: 50px;
+    width: 200px;
+    float: left;
+    cursor: pointer;
+}
+div#nav_header h1:hover{
+    background-position: center center;
+}
+
+div#header_right{
+    float: right;
+}
+div#nav_header ul{
+	display:block;
+    line-height: 50px;
+}
+div#nav_header ul li{
+    float: left;
+	display:block;
+}
+div#nav_header ul li a{
+    display: block;
+    color: #9b9b9b;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+}
+div#nav_header ul li a:hover{
+    color: #18ba00;
+    background-color: #eee;
+}
+div#nav_header ul li.vertical_border{
+    height: 50px;
+	border-left:1px solid #ccc;
+	border-right:1px solid #eee;
+}
+
+
