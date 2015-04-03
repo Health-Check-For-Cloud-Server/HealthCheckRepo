@@ -1,0 +1,68 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+/*注册模块*/
+.register{
+	width:400px;
+	margin:50px auto;
+	border: 1px solid #CCCCCC;
+	border-radius: 3px;
+	font-family: Arial,"微软雅黑","宋体";
+}
+
+/*注册模块头部*/
+.register-title{
+	border-bottom:1px solid #f2f2f2;
+	height: 70px;
+}
+.register-title h1{
+	color:#666666;
+	font-size:16px;
+	line-height:70px;
+	padding: 0 20px;
+}
+
+/*注册模块主体*/
+.register-content{
+	position:relative;
+	padding-top:5px;
+}
+.register-content div{
+	margin:30px;
+}
+.register-content label{
+	color:#ccc;
+}
+.register-content input{
+	display:inline-block;
+	width: 300px;
+	height: 34px;
+	line-height: 34px;
+	text-indent:1em;
+	font-size:14px;
+	outline:none;
+	
+}
+/*处理chrome下input text框默认的背景色*/
+input:-webkit-autofill { 
+	-webkit-box-shadow: 0 0 0 1000px white inset;
+} 
+.register-content label{
+	position:absolute;
+	padding-top:2px;
+	line-height: 34px;
+	left:44px;
+}
+.register-content .reg_submit{
+	border: 1px solid #215A8D;
+	border-radius: 4px;
+	background: url(../images/signup_bg.png) repeat-x left top;
+	text-align: center;
+  	height: 35px;
+  	color: white;
+  	font-size: 26px;
+  	font-weight:900;
+  	text-indent:0;
+}

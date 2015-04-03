@@ -2,9 +2,39 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="css/signup.css">
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/signup.js"></script>
 </head>
 <body>
-
+	<div class="register">
+		<div class="register-title">
+			<h1>注册</h1>
+		</div>
+		<div class="register-content">
+			<form action="#" method="post">
+				<div>
+					<label for="email">注册邮箱</label>
+					<input type="text" name="email" id="email" />
+				</div>
+				<div>
+					<label for="password">密码</label>
+					<input type="password" name="password" id="password" />
+				</div>
+				<div>
+					<label for="confirmpass">确认密码</label>
+					<input type="password" name="confirmpass" id="confirmpass" />
+				</div>
+				<div>
+					<label for="nickname">用户昵称</label>
+					<input type="text" name="nickname" id="nickname" />
+				</div>
+				<div>
+					<input type="submit" class="reg_submit" id="reg_submit" value="注 册" />
+				</div>
+			</form>
+		</div>
+	</div>
 </body>
 </html>
