@@ -37,6 +37,9 @@ div#nav_header h1{
     float: left;
     cursor: pointer;
 }
+div#nav_header h1 a{
+    color: transparent;
+}
 div#nav_header h1:hover{
     background-position: center center;
 }
