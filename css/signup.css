@@ -14,14 +14,15 @@
 
 /*注册模块头部*/
 .register-title{
-	border-bottom:1px solid #f2f2f2;
+	padding-bottom: 20px;
+	border-bottom:1px solid #18ba00;
 	height: 40px;
 }
 .register-title h1{
-	color:#666666;
+	color:#9b9b9b;
 	font-size:16px;
 	line-height:70px;
-	padding: 0 20px;
+	padding: 0 30px;
 }
 
 /*注册模块主体*/
@@ -43,7 +44,6 @@
 	text-indent:1em;
 	font-size:14px;
 	outline:none;
-	
 }
 #validateEmail{
 	display:none;

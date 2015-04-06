@@ -110,7 +110,7 @@ $(function() {
 		var sibling = this.previousElementSibling || this.previousSibling;
 		if(this.value==""){
 			this.style.borderColor = '#ff0022';
-			this.style.backgroundColor = '#ff0022';
+			//this.style.backgroundColor = '#ff0022';
 			sibling.innerHTML="用户名不能为空";
 		}else{
 			this.style.borderColor = '';

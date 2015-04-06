@@ -8,7 +8,7 @@ function add_header(){
         "<div id='header_right'>"+
         "<ul>"+
         "<li class='vertical_border'></li>"+
-        "<li><a href='/login.html'>登陆</a></li>"+
+        "<li><a href='/login.html'>登录</a></li>"+
         "<li class='vertical_border'></li>"+
         "<li><a href='/signup.html'>注册</a></li>"+
         "<li class='vertical_border'></li>"+
