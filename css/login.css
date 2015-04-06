@@ -1,0 +1,11 @@
+
+#login_box{
+    float:right;
+    width:400px;
+    height:370px;
+    border:1px solid #aaa;
+    border-top:3px solid #18ba00;
+    box-shadow:0px 0px 5px #ccc;
+    margin-top:70px;
+    background-color: rgba(255,255,255,0.85);
+}

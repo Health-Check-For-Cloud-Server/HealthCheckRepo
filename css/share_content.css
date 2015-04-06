@@ -22,7 +22,8 @@ img{
 
 header{
     height: 50px;
-    background: #dddddd;
+    background: rgba(221,221,221,0.95);
+    box-shadow: 0px 0px 5px #9b9b9b;
 }
 div#nav_header{
     height: 50px;
@@ -36,9 +37,6 @@ div#nav_header h1{
     width: 200px;
     float: left;
     cursor: pointer;
-}
-div#nav_header h1 a{
-    color: transparent;
 }
 div#nav_header h1:hover{
     background-position: center center;
@@ -70,6 +68,11 @@ div#nav_header ul li.vertical_border{
     height: 50px;
 	border-left:1px solid #ccc;
 	border-right:1px solid #eee;
+}
+
+div.wrap_content{
+    width: 1100px;
+    margin: auto;
 }
 
 

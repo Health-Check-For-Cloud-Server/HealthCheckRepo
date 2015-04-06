@@ -4,7 +4,7 @@
 function add_header(){
     var str_header = "<header>"+
         "<div id='nav_header'>"+
-        "<h1><a href='/'>HealthCheck</a></h1>"+
+        "<a href='/'><h1></h1></a>"+
         "<div id='header_right'>"+
         "<ul>"+
         "<li class='vertical_border'></li>"+
