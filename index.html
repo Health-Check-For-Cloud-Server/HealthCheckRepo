@@ -4,12 +4,56 @@
         <meta charset="UTF-8">
         <title>Health Check</title>
         <link rel="stylesheet" href="/lib/jquery_ui/jquery-ui.css" />
-        <link rel="stylesheet" href="/css/header.css"/>
+        <link rel="stylesheet" href="/css/share_content.css"/>
+        <link rel="stylesheet" href="/css/main_page.css"/>
         <script type="text/javascript" src="/lib/jquery/jquery.js" ></script>
         <script type="text/javascript" src="/lib/jquery/jquery-ui.js" ></script>
         <script type="text/javascript" src="/js/share_content.js" ></script>
     </head>
     <body>
         <script>add_header();</script>  <!--使用这行代码添加顶栏-->
+        <div id="wrap_banner">
+            <div id="banner">
+                <h1>Help you <span>check</span> server of any kind!</h1>
+                <img src="/image/magnifier.png" />
+            </div>
+        </div>
+        <div id="wrap_content">
+            <div id="content">
+                <ul>
+                    <li>
+                        <h2>
+                            <span class="step">Step1</span>
+                            <span class="step_content">Create a HealthCheck</span>
+                            <img src="/image/new_file.png" />
+                        </h2>
+                    </li>
+                    <li>
+                        <h2>
+                            <span class="step">Step2</span>
+                            <span class="step_content">Set Check Program</span>
+                            <img src="/image/programming.png" />
+                        </h2>
+                    </li>
+                    <li>
+                        <h2>
+                            <span class="step">Step3</span>
+                            <span class="step_content">Check your Server!</span>
+                            <img src="/image/check.png" />
+                        </h2>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <div id="temp_line">
+                <h2>Developed by HealthCheck Team.</h2>
+                <h2 class="vertical_line"></h2>
+                <h2>Vies source on
+                    <a href="https://github.com/Health-Check-For-Cloud-Server/HealthCheckRepo" target="_blank">GitHub</a>
+                    .
+                </h2>
+            </div>
+        </footer>
     </body>
 </html>
