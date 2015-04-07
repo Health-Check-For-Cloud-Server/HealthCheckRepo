@@ -2,9 +2,6 @@ body {
     background: url("/image/homepage_background.jpg") no-repeat fixed;
     background-size: 100%;
 }
-h1,h2,h3,h4,h5{
-    font-family: 'Trebuchet MS', Myriad, Helvetica, Arial, sans-serif;
-}
 
 div#wrap_banner{
     width: 100%;

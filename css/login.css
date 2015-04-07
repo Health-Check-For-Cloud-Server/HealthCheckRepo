@@ -39,7 +39,7 @@ div.input_group div.input_icon{
     height: 30px;
     text-align: center;
     line-height: 30px;
-    background: #444444;
+    background: #ddd;
     border: 1px solid #9b9b9b;
     border-right: 0;
 }
@@ -68,6 +68,7 @@ div#login_box button{
     margin-top:50px;
     font-family: inherit;
     cursor: pointer;
+    border-radius: 5px;
 }
 div#login_box button:hover{
     background: #18d600;

@@ -1,0 +1,68 @@
+div#tabs{
+    border: 0;
+    background: none;
+    width: 1100px;
+    margin: 50px auto;
+    box-shadow: 0px 0px 10px #ccc;
+}
+div#tabs *{
+    border-radius: 0;
+}
+div#selects ul{
+    float: left;
+    width: 200px;
+    height: 460px;
+    background: #dddddd;
+    padding: 20px 0px !important;
+    border: 5px solid #ddd;
+    border-right: 0;
+}
+div#selects ul li,span,a {
+    width: 200px;
+    margin: 0px !important;
+    text-align: center;
+    border: 0;
+    outline: 0px;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+    background: none;
+}
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active{
+    background: #fff;
+}
+div#selects a{
+    padding: 10px 0px !important;
+}
+div.fragment{
+    height: 500px !important;
+    padding: 0px !important;
+    border: 5px solid #dddddd !important;
+    border-left: 0 !important;
+    background: #fff !important;
+}
+div.fragment h1{
+    font-size: 1em;
+    font-weight: 700;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+div.fragment #new_health_check{
+    float: right;
+    margin: 20px;
+    cursor: pointer;
+}
+div#my_health_check ul{
+    padding: 50px;
+}
+div#my_health_check li{
+    margin: 10px;
+    cursor: pointer;
+    list-style: none;
+}
+div#my_health_check li a{
+    color: inherit;
+}
+div#my_health_check li:hover{
+    text-decoration: underline;
+    color: #18ba00;
+}
