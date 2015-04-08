@@ -5,7 +5,7 @@
 
 /*注册模块*/
 .register{
-	width:450px;
+	width:400px;
 	margin:50px auto;
 	border: 1px solid #CCCCCC;
 	border-radius: 3px;
@@ -31,7 +31,7 @@
 	padding-top:5px;
 }
 .register-content div{
-	margin:30px;
+	margin:15px 25px 15px 35px;
 }
 .register-content label{
 	color:#ccc;
@@ -44,15 +44,23 @@
 	text-indent:1em;
 	font-size:14px;
 	outline:none;
+	border:1px solid #dddddd;
 }
+.register-content input:hover{
+	border:1px solid #9b9b9b ;
+}
+/*验证是否成功的提示信息，默认不可见*/
 #validateEmail{
 	display:none;
+	margin-top:10px;
 }
 #validatePass{
 	display:none;
+	margin-top:10px;
 }
 #validatePassTwo{
 	display:none;
+	margin-top:10px;
 }
 
 /*处理chrome下input text框默认的背景色*/
@@ -66,13 +74,17 @@ input:-webkit-autofill {
 	left:44px;
 }
 .register-content .reg_submit{
-	border: 1px solid #215A8D;
+	border: 1px solid #dddddd;
 	border-radius: 4px;
-	background: url(../image/signup_bg.png) repeat-x left top;
+	/*background: url(../image/signup_bg.png) repeat-x left top;*/
+	background-color: #dddddd;
 	text-align: center;
   	height: 35px;
   	color: white;
   	font-size: 26px;
   	font-weight:900;
   	text-indent:0;
+}
+.register-content .reg_submit:hover{
+	background-color: #9b9b9b; 
 }
