@@ -68,7 +68,7 @@ div#login_box button{
     margin-top:50px;
     font-family: inherit;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 div#login_box button:hover{
     background: #18d600;
