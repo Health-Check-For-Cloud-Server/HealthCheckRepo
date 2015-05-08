@@ -1,0 +1,17 @@
+#wrap_health_check {
+    position: relative;
+    width: 1000px;
+    padding: 20px 50px;
+    margin: 20px auto;
+    border: 1px solid #fff;
+}
+
+#health_check_tool {
+    position: absolute;
+    right: 50px;
+    top: 100px;
+}
+#health_check_tool li {
+    display: block;
+    cursor: pointer;
+}
