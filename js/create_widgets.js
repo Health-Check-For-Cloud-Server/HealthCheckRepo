@@ -22,7 +22,6 @@ LABEL.JUDGEMENT = 3;
  * */
 var check_unit_count = 0;
 
-
 $.fn.add_check_unit = function () {
     var check_unit = $("<div class='check_unit'></div>");
 
