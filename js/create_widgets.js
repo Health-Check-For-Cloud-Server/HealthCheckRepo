@@ -101,16 +101,16 @@ $.fn.add_false_area = function () {
 $.fn.add_code_input = function (INPUTMODE) {
     switch (INPUTMODE){
         case INPUT.TEST:
-            var code_input = $("<input class='input_test' />");
+            var code_input = $("<input type='text' class='input_test' />");
             break;
         case INPUT.RUN:
-            var code_input = $("<input class='input_run' />");
+            var code_input = $("<input type='text' class='input_run' />");
             break;
         case INPUT.CHECK:
-            var code_input = $("<input class='input_check' />");
+            var code_input = $("<input type='text' class='input_check' />");
             break;
         case INPUT.DISPOSE:
-            var code_input = $("<input class='input_dispose' />");
+            var code_input = $("<input type='text' class='input_dispose' />");
             break;
     }
 

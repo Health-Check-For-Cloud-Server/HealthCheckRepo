@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+
+
+.check_unit {
+    position: relative;
+    padding: 30px 0px 100px 0px;
+    background: rgba(4, 186, 186, 0.76);
+    color: #000;
+    margin-bottom: 10px;
+}
+
+
+
+.more_check {
+    position: absolute;
+    bottom: 10px;
+    background: #444;
+    outline: none;
+    text-align: center;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    color: #aaa;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.more_check:hover {
+    color: #eee;
+}
+
+/*.test,.run_unit,.check{*/
+    /*width: 100%;*/
+/*}*/
+.check_unit label {
+    display: block;
+    width: 100px;
+    float: left;
+    height: 25px;
+    line-height: 25px;
+    color: #444;
+    font-weight: bold;
+}
+
+.label_unit {
+    float: none !important;
+    background: #444;
+    color: #aaa !important;
+    width: 50px !important;
+    height: 50px !important;
+    line-height: 50px !important;
+    font-weight: normal !important;
+    font-style: italic;
+    display: block;
+    text-align: center;
+    font-size: 35px;
+    border-radius: 0px 5px 5px 0px;
+    padding: 0px 5px 0px 25px;
+    margin-bottom: 30px;
+}
+
+.check_unit input[type="text"] {
+    height: 25px;
+    line-height: 25px;
+    width: 400px;
+    padding: 0px 5px;
+}
+
+.test,.run_unit,.true_area,.false_area,.check{
+    margin: 5px 0px 5px 50px;
+}
+.test,.run_unit,.check {
+    padding: 10px 20px;
+}
+
+.test {
+    border-left: 2px solid #a300ff;
+}
+
+.run_unit {
+    border-left: 2px solid #ff6c00;
+}
+
+.check {
+    border-left: 2px solid #0aff70;
+}
+
+.true_area label,.false_area label{
+    width: 50px;
+}
