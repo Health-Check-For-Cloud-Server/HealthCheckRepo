@@ -69,6 +69,11 @@
     line-height: 25px;
     width: 400px;
     padding: 0px 5px;
+    outline:  rgba(170, 170, 170, 0.30) solid 2px;
+}
+
+.check_unit input[type="text"]:focus {
+    outline:  rgba(170, 170, 170, 0.70) solid 2px;
 }
 
 .test,.run_unit,.true_area,.false_area,.check{
