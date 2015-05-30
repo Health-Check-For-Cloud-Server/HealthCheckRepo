@@ -7,10 +7,9 @@ $(function () {
         $("#wrap_health_check").add_check_unit();
     });
     $("#check_health").click(function () {
-        alert(generate_middle_code());
+        submit_mid_code(generate_mid_code());
     });
 });
-
 
 function HealthCheckObject() {
     this.healthcheck = new Array();
@@ -36,7 +35,7 @@ function CheckMessage(check_code,check_true,check_false) {
     this.check_false = check_false;
 }
 
-function generate_middle_code() {
+function generate_mid_code() {
     var health_check = new HealthCheckObject();
 
     //遍历所有的check_unit
@@ -76,3 +75,28 @@ function generate_middle_code() {
 
     return JSON.stringify(health_check);
 }
+
+function submit_mid_code(mid_code) {
+    $.ajax({
+        url: "/server/healthcheck/check_dispose.php",
+        data: "mid_code=" + mid_code,
+        dataType: "text",
+        error: submit_fail,
+        timeout: submit_timeout,
+        success: submit_success
+    });
+}
+
+function submit_fail(){
+    alert("信息提交到服务器失败");
+}
+
+function submit_timeout(){
+    alert("信息提交到服务器超时");
+}
+
+function submit_success(msg){
+    alert(msg);
+}
+
+
