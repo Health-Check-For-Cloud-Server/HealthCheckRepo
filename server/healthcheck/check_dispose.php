@@ -13,11 +13,13 @@
 
         $result = array();
         exec('python ./modules/check.py '.$file_name, $result);
-        unlink($file_name);
+        //unlink($file_name);
 
         $result_str = "";
-        foreach ($result as $x)
-            $result_str += $x;
+        foreach ($result as $x) {
+            if ($x != $result[0])
+                $result_str .= $x;
+        }
 
         echo $result_str;
     }
