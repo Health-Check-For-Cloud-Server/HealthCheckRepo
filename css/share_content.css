@@ -58,13 +58,12 @@ div#nav_header ul li{
 }
 div#nav_header ul li a{
     display: block;
-    color: #9b9b9b;
+    color: #ff7400;
     width: 100px;
     text-align: center;
     cursor: pointer;
 }
 div#nav_header ul li a:hover{
-    color: #18ba00;
     background-color: #eee;
 }
 div#nav_header ul li.vertical_border{
