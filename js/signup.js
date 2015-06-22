@@ -2,8 +2,6 @@ $(function() {
 	//验证邮箱
 	$("#email").focus(function(){
 		this.style.borderColor = "#18ba00";
-		var sibling = this.previousElementSibling || this.previousSibling;
-		sibling.innerHTML="";
 		var next = this.nextElementSibling || this.nextSibling;
 		next.style.display = 'none';
 	});
@@ -12,7 +10,6 @@ $(function() {
 		var re = /^\w+@[a-z0-9]+(\.[a-z]+){1,3}$/;
 		if(this.value==""){
 			var sibling = this.previousElementSibling || this.previousSibling;
-			sibling.innerHTML="注册邮箱";
 			this.style.borderColor = '';
 			this.style.backgroundColor = '';
 			var next = this.nextElementSibling || this.nextSibling;
@@ -37,7 +34,6 @@ $(function() {
 	$("#password").focus(function(){
 		this.style.borderColor = "#18ba00";
 		var sibling = this.previousElementSibling || this.previousSibling;
-		sibling.innerHTML="";
 		var next = this.nextElementSibling || this.nextSibling;
 		next.style.display = 'none';
 	});
@@ -45,8 +41,6 @@ $(function() {
 		this.style.borderColor = "";
 		var re = /\w{6,12}/;
 		if(this.value==""){
-			var sibling = this.previousElementSibling || this.previousSibling;
-			sibling.innerHTML="密码";
 			this.style.borderColor = '';
 			this.style.backgroundColor = '';
 			var next = this.nextElementSibling || this.nextSibling;
@@ -68,19 +62,15 @@ $(function() {
 	//验证确认密码
 	$("#confirmpass").focus(function(){
 		this.style.borderColor = "#18ba00";
-		var sibling = this.previousElementSibling || this.previousSibling;
-		sibling.innerHTML="";
 		var next = this.nextElementSibling || this.nextSibling;
 		next.style.display = 'none';
 	});
 	
 	$("#confirmpass").blur(function(){
 		this.style.borderColor = "";
-		var sibling = this.previousElementSibling || this.previousSibling;
 		var cpv = this.parentNode.previousElementSibling.lastElementChild.previousElementSibling || this.parentNode.previousSibling.lastChild.previousSibling;
 		//alert(cpv.value);
 		if(this.value==""){
-			sibling.innerHTML="确认密码";
 			this.style.borderColor = '';
 			this.style.backgroundColor = '';
 			var next = this.nextElementSibling || this.nextSibling;
@@ -102,8 +92,6 @@ $(function() {
 	//验证昵称
 	$("#nickname").focus(function(){
 		this.style.borderColor = "#18ba00";
-		var sibling = this.previousElementSibling || this.previousSibling;
-		sibling.innerHTML="";
 	});
 	$("#nickname").blur(function(){
 		this.style.borderColor = "";
@@ -118,5 +106,49 @@ $(function() {
 		}
 	});
 
+	$("#reg_submit").click(function () {
+		try_register();
+	});
+
 });
 
+
+function try_register(){
+	//check if name is existed
+	var name = $("#nickname").val();
+	var password = $("#password").val();
+	var email = $("#email").val();
+	$.ajax({
+		url: "/server/user/check_user_name.php",
+		data: "name="+name,
+		dataType: "text",
+		type:"post",
+		error: register_fail,
+		success: function(info){
+			if (info == "0"){
+				alert("用户名已存在！");
+			}else {
+				//if not, add this user to database
+				register(name,password,email);
+				location.href = "/login.html";
+			}
+		}
+	});
+}
+function register_fail(){
+	alert("提交信息失败");
+}
+
+function register(name,password,email){
+	$.ajax({
+		url: "/server/user/register.php",
+		data: "name="+name+"&password="+password+"&email="+email,
+		dataType: "text",
+		type:"post",
+		error: register_fail,
+		success: function(info){
+			if (info == "1")
+				alert("注册成功");
+		}
+	});
+}

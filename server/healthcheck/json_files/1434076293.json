@@ -1,0 +1,1 @@
+{"healthcheck":[{"test":"0","run":"java -version","run_true":"CMD","run_false":"EXIT","check_message":[{"check_code":"grep 'java version' record.txt","check_true":"CMD","check_false":"EXIT"}]}]}

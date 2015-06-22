@@ -10,6 +10,7 @@
     <script type="text/javascript" src="/lib/jquery/jquery.js" ></script>
     <script type="text/javascript" src="/lib/jquery_ui/jquery-ui.js" ></script>
     <script type="text/javascript" src="/js/share_content.js" ></script>
+    <script type="text/javascript" src="/js/login.js" ></script>
 </head>
 <body>
     <script>
@@ -20,21 +21,21 @@
             <div id="login_title">
                 <h1>登录</h1>
             </div>
-            <form action="/my/my.html">
+            <div id="login_form">
                 <div class="input_group">
                     <div class="input_icon">
                         <span class="ui-icon ui-icon-person"></span>
                     </div>
-                    <input type="text" />
+                    <input id="name" type="text" />
                 </div>
                 <div class="input_group">
                     <div class="input_icon">
                         <span class="ui-icon ui-icon-locked"></span>
                     </div>
-                    <input type="password" />
+                    <input id="password" type="password" />
                 </div>
-                <button type="submit">登 录</button>
-            </form>
+                <button id="login_button" type="submit">登 录</button>
+            </div>
         </div>
     </div>
 </body>
