@@ -16,6 +16,8 @@
     mysqli_set_charset($con,"utf-8");
     $result=mysqli_query($con,$sql);
     if(mysqli_num_rows($result)!=0){
+        session_start();
+        $_SESSION["user_name"] = $name;
         echo 1;
     }
     else

@@ -19,12 +19,30 @@
         add_header();
     </script>
     <div id="wrap_health_check">
+        <div>
+            <?php
+            session_start();
+            if(isset($_SESSION["user_name"])){
+                if(isset($_GET["case_name"]))
+                    echo$_GET["case_name"];
+            }
+            else
+            {
+            ?>
+                <script>
+                    $(function () {
+                        alert("Login first, please!");
+                    });
+                </script>
+            <?php
+            }
+            ?>
+        </div>
         <div id="health_check_tool">
             <ul>
                 <li id="new_unit">New Unit</li>
-                <li>Save All</li>
-                <li>Load From File</li>
-                <li id="check_health">Health Check</li>
+                <li>Save</li>
+                <li id="check_health">Run Check</li>
             </ul>
         </div>
     </div>

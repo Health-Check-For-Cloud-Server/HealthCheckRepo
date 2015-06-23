@@ -29,14 +29,34 @@
             <h1>我的 HealthCheck</h1>
             <div id="new_health_check" class="ui-icon ui-icon-plus" title="创建新的HealthCheck项目"></div>
             <ul>
-                <li><a href="/my/healthcheck.html">Check Java</a></li>
-                <li><a href="/my/healthcheck.html">Check Git</a></li>
-                <li><a href="/my/healthcheck.html">Check G++</a></li>
-                <li><a href="/my/healthcheck.html">Check Vim</a></li>
-                <li><a href="/my/healthcheck.html">Check Python</a></li>
-                <li><a href="/my/healthcheck.html">Check Apache</a></li>
-                <li><a href="/my/healthcheck.html">Check MySQL</a></li>
-                <li><a href="/my/healthcheck.html">Check PHP</a></li>
+                <?php
+                session_start();
+                if(isset($_SESSION["user_name"])){
+                    $name = $_SESSION["user_name"];
+                    $info = json_decode(file_get_contents("../server/user/".$name."/info.json"),true);
+                    $case_list = $info['case_list'];
+                    foreach ($case_list as &$case){
+                        $case_id = $case['case_id'];
+                        ?>
+                            <li onclick="javascript:window.location='healthcheck.php?case_id=<?php echo $case_id; ?>'"><?php echo $case['case_name']; ?></li>
+                        <?php
+                    }
+
+                    //$list = $info->$case_list;
+
+                }
+                else
+                {
+                    ?>
+                    <script>
+                        $(function () {
+                            alert("Login first, please!");
+                        });
+                    </script>
+                <?php
+                }
+
+                ?>
             </ul>
         </div>
         <div id="check_history" class="fragment">

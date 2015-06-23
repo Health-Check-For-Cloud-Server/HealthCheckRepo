@@ -21,6 +21,7 @@
     mysqli_close($con);
     /*Create Folder and File For New User*/
     mkdir($name,0777);
-    mkdir($name."/healthcheck_list",0777);
-    mkdir($name."/check_history",0777);
+    mkdir($name."/case_history",0777);
+    $file = fopen($name."/info.json","w");
+    fclose($file);
     echo "1";

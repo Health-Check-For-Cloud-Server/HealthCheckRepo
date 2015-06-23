@@ -18,7 +18,7 @@ function login_check(){
         error: register_fail,
         success: function (info) {
             if (info == "1")
-                window.location.href = "/my/my.html";
+                window.location.href = "/my/my.php";
             else
                 alert("用户名或密码错误！");
         }
