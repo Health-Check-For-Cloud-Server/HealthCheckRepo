@@ -1,0 +1,1 @@
+{"healthcheck":[{"test":"0","run":"java","run_true":"","run_false":"","check_message":[{"check_code":"","check_true":"","check_false":""}]}]}

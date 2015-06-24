@@ -9,6 +9,9 @@ $(function () {
     $("#check_health").click(function () {
         submit_mid_code(generate_mid_code());
     });
+    $("#save_button").click(function () {
+        save();
+    });
 });
 
 function HealthCheckObject() {
@@ -81,6 +84,7 @@ function submit_mid_code(mid_code) {
         url: "/server/healthcheck/check_dispose.php",
         data: "mid_code=" + mid_code,
         dataType: "text",
+        type: "post",
         error: submit_fail,
         timeout: submit_timeout,
         success: submit_success
@@ -97,6 +101,26 @@ function submit_timeout(){
 
 function submit_success(msg){
     alert(msg);
+}
+
+function save(){
+    var mid_code = generate_mid_code();
+    $.ajax({
+        url: "/server/healthcheck/save_check.php",
+        data: "mid_code=" + mid_code,
+        dataType: "text",
+        type: "post",
+        error: submit_fail,
+        timeout: submit_timeout,
+        success: function (info) {
+            if (info == "1"){
+                alert("保存成功！");
+            }
+            else{
+                alert(info);
+            }
+        }
+    });
 }
 
 

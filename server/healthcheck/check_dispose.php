@@ -8,7 +8,7 @@
 
 session_start();
 if (isset($_SESSION["user_name"])){
-    if($mid_code = $_GET['mid_code']) {
+    if($mid_code = $_POST['mid_code']) {
         $file_name = "./json_files/".time().".json";
         $json_file = fopen($file_name,"w");
         fwrite($json_file,$mid_code);

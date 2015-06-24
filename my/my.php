@@ -33,7 +33,9 @@
                 session_start();
                 if(isset($_SESSION["user_name"])){
                     $name = $_SESSION["user_name"];
-                    $info = json_decode(file_get_contents("../server/user/".$name."/info.json"),true);
+                    $info_json = $_SESSION['info_json'];
+
+                    $info = json_decode($info_json, true);
                     $case_list = $info['case_list'];
                     foreach ($case_list as &$case){
                         $case_id = $case['case_id'];
@@ -51,6 +53,7 @@
                     <script>
                         $(function () {
                             alert("Login first, please!");
+                            window.location.href="/login.html";
                         });
                     </script>
                 <?php

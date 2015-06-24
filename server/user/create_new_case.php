@@ -15,7 +15,7 @@ if (isset($_SESSION["user_name"])){
     $run_check_history = array();
     $case = array('case_id' => $case_id, 'case_name' => $case_name, 'run_check_history' => $run_check_history);
 
-    $info = json_decode(file_get_contents($name."/info.json"),true);
+    $info = json_decode($_SESSION['info_json'],true);
     $case_list = &$info['case_list'];
     array_push($case_list,$case);
 
@@ -23,10 +23,14 @@ if (isset($_SESSION["user_name"])){
     $file = fopen($name."/case_history/".$case_id."json","w");
     fclose($file);
 
+    //modify SESSION info_json
+    $_SESSION['info_json'] = json_encode($info);
+
     //modify info.json
     $file_info = fopen($name."/info.json","w");
-    fwrite($file_info, json_encode($info));
+    fwrite($file_info, $_SESSION['info_json']);
     fclose($file_info);
+
 
     echo 1;
 }

@@ -18,8 +18,11 @@
     if(mysqli_num_rows($result)!=0){
         session_start();
         $_SESSION["user_name"] = $name;
+        $info_json = file_get_contents($name."/info.json");
+        $_SESSION['info_json'] = $info_json;
+
         echo 1;
     }
     else
-        echo 0;
+        echo "用户名或密码错误";
     mysqli_close($con);

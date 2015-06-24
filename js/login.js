@@ -20,7 +20,7 @@ function login_check(){
             if (info == "1")
                 window.location.href = "/my/my.php";
             else
-                alert("用户名或密码错误！");
+                alert(info);
         }
 
     });
