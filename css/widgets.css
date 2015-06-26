@@ -11,10 +11,26 @@
     padding: 30px 0px 100px 0px;
     background: rgba(4, 186, 186, 0.76);
     color: #000;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
-
+.del{
+    position: absolute;
+    right: 20px;
+    top: 50px;
+    font-size: 2em;
+    color: #eee;
+    background: #333;
+    border-radius: 1em;
+    width: 1em;
+    height: 1em;
+    line-height: 0.9em;
+    text-align: center;
+    cursor: pointer;
+}
+.del:hover{
+    box-shadow: 0px 0px 15px #fff;
+}
 
 .more_check {
     position: absolute;
@@ -41,8 +57,8 @@
     display: block;
     width: 100px;
     float: left;
-    height: 25px;
-    line-height: 25px;
+    height: 30px;
+    line-height: 30px;
     color: #444;
     font-weight: bold;
 }
@@ -65,15 +81,15 @@
 }
 
 .check_unit input[type="text"] {
-    height: 25px;
-    line-height: 25px;
+    height: 30px;
+    line-height: 30px;
     width: 400px;
     padding: 0px 5px;
     outline:  rgba(170, 170, 170, 0.30) solid 2px;
 }
 
 .check_unit input[type="text"]:focus {
-    outline:  rgba(170, 170, 170, 0.70) solid 2px;
+    outline: 0;
 }
 
 .test,.run_unit,.true_area,.false_area,.check{
@@ -92,6 +108,7 @@
 }
 
 .check {
+    position: relative;
     border-left: 2px solid #0aff70;
 }
 

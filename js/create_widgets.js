@@ -17,6 +17,10 @@ LABEL.UNIT = 1;
 LABEL.RUN = 2;
 LABEL.JUDGEMENT = 3;
 
+var DEL = function () {}
+DEL.UNIT = 1;
+DEL.CHECK = 2;
+
 /*
  *   以下方法均是在当前层中append一个模块
  * */
@@ -26,6 +30,7 @@ $.fn.add_an_empty_check_unit = function () {
     var check_unit = $("<div class='check_unit'></div>");
 
     $(check_unit).add_label(++check_unit_count + "",LABEL.UNIT);
+    $(check_unit).add_del(DEL.UNIT);
     $(check_unit).add_test();
     $(check_unit).add_run_unit();
     $(check_unit).add_check();
@@ -39,6 +44,7 @@ $.fn.add_an_empty_check_unit = function () {
 $.fn.add_check_unit = function (info_check_unit) {
     var check_unit = $("<div class='check_unit'></div>");
     $(check_unit).add_label(++check_unit_count + "",LABEL.UNIT);
+    $(check_unit).add_del(DEL.UNIT);
     $(check_unit).add_test(info_check_unit['test']);
     $(check_unit).add_run_unit(info_check_unit['run'],info_check_unit['run_true'],info_check_unit['run_false']);
 
@@ -110,6 +116,7 @@ $.fn.add_run_unit = function () {
 $.fn.add_check = function () {
     var check = $("<div class='check'></div>");
 
+    check.add_del(DEL.CHECK);
     if (arguments.length == 3){
         $(check).add_code_input(INPUT.CHECK,arguments[0]).add_label("Check",LABEL.RUN);
         $(check).add_true_area(arguments[1]);
@@ -204,4 +211,26 @@ $.fn.add_label = function (content,LABELMODE) {
         $(this).before(label);
 
     return label;
+}
+
+$.fn.add_del = function(DELMODE){
+    //switch (DELMODE) {
+    //    case DEL.UNIT:
+    //        break;
+    //    case DEL.CHECK:
+    //        break;
+    //}
+    var del = $("<p class='del'>-</p>");
+    $(this).append(del);
+
+    del.click(function () {
+        if(DELMODE == DEL.UNIT){
+            $(this).parent().nextAll('.check_unit').find('.label_unit').each(function () {
+                var new_label_num = parseInt($(this).text()) - 1;
+                $(this).text(new_label_num);
+            });
+            --check_unit_count;
+        }
+        $(this).parent().remove();
+    });
 }

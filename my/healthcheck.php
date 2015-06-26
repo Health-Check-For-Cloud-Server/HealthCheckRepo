@@ -35,7 +35,7 @@
                 foreach($case_list as &$case){
                     if ($case['case_id'] == $case_id){
                         $case_name = $case['case_name'];
-                        echo $case_name;
+                        echo "<h1 id='case_title'>$case_name</h1>";
                         break;
                     }
                 }
