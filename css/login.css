@@ -61,10 +61,10 @@ div.input_group input{
 
 div#login_box button{
     background: #18ba00;
-    color: #dddddd;
+    color: #eee;
     width: 295px;
     height: 35px;
-    font-size: 1.2em;
+    font-size: 1.0em;
     margin-top:50px;
     font-family: inherit;
     cursor: pointer;

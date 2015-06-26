@@ -19,14 +19,14 @@ function create_new_case(){
             type: "post",
             error: submit_fail,
             data: "case_name="+case_name,
-            success: function(info){
-                if(info == "1"){
+            success: function(case_id){
+                if(case_id.length == 14){       //eg:20150626222800
                     alert(case_name+" was created successfully!");
-                    window.location.href = "/my/healthcheck.php?case_name="+case_name;
+                    window.location.href = "/my/healthcheck.php?case_id="+case_id;
                 }
                 else
                 {
-                    alert("Create failed："+info);
+                    alert("Create failed!");
                 }
             }
         });

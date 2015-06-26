@@ -37,12 +37,18 @@
 
                     $info = json_decode($info_json, true);
                     $case_list = $info['case_list'];
-                    foreach ($case_list as &$case){
-                        $case_id = $case['case_id'];
-                        ?>
+                    if ($case_list != null){
+                        foreach ($case_list as &$case){
+                            $case_id = $case['case_id'];
+                            ?>
                             <li onclick="javascript:window.location='healthcheck.php?case_id=<?php echo $case_id; ?>'"><?php echo $case['case_name']; ?></li>
                         <?php
+                        }
                     }
+                    else{
+                        echo "未创建任何HealthCheck项目，创建一个～";
+                    }
+
 
                     //$list = $info->$case_list;
 

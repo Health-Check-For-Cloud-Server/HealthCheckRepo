@@ -50,7 +50,7 @@
                 <?php
                 }
                 else{
-                    $path = "../server/user/".$user_name."/case_history/".$case_id."json";
+                    $path = "../server/user/".$user_name."/case_history/".$case_id.".json";
                     if (file_exists($path)){
                         $file_json = file_get_contents($path);
                         echo "<script>

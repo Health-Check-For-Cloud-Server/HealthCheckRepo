@@ -17,10 +17,16 @@ if (isset($_SESSION["user_name"])){
 
     $info = json_decode($_SESSION['info_json'],true);
     $case_list = &$info['case_list'];
-    array_push($case_list,$case);
-
+    if($case_list != null){
+        array_push($case_list,$case);
+    }
+    else{
+        $case_list = array();
+        array_push($case_list,$case);
+        $info = array('case_list' => $case_list);
+    }
     //create file to storage content of new case
-    $file = fopen($name."/case_history/".$case_id."json","w");
+    $file = fopen($name."/case_history/".$case_id.".json","w");
     fclose($file);
 
     //modify SESSION info_json
@@ -31,8 +37,7 @@ if (isset($_SESSION["user_name"])){
     fwrite($file_info, $_SESSION['info_json']);
     fclose($file_info);
 
-
-    echo 1;
+    echo $case_id;
 }
 else
     echo "Login first, please!";

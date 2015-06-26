@@ -16,12 +16,15 @@
     $email = $_POST['email'];
     $sql = "INSERT INTO healthcheck.hc_user (name,password,email) VALUES ('$name','$password','$email')";
     mysqli_set_charset($con,"utf-8");
-    mysqli_query($con,$sql);
 
+    mysqli_query($con,$sql);
     mysqli_close($con);
+
     /*Create Folder and File For New User*/
     mkdir($name,0777);
     mkdir($name."/case_history",0777);
     $file = fopen($name."/info.json","w");
     fclose($file);
-    echo "1";
+
+
+

@@ -130,6 +130,7 @@ function try_register(){
 			}else {
 				//if not, add this user to database
 				register(name,password,email);
+				alert("注册成功！")
 				location.href = "/login.html";
 			}
 		}
@@ -144,11 +145,12 @@ function register(name,password,email){
 		url: "/server/user/register.php",
 		data: "name="+name+"&password="+password+"&email="+email,
 		dataType: "text",
-		type:"post",
-		error: register_fail,
-		success: function(info){
-			if (info == "1")
-				alert("注册成功");
-		}
+		type:"post"
+		//error: register_fail,
+		//success: function(info){
+		//	alert(info)
+		//	if (info == "1")
+		//		alert("注册成功");
+		//}
 	});
 }

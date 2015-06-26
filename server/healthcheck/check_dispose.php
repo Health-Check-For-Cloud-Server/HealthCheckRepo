@@ -14,7 +14,7 @@ if (isset($_SESSION["user_name"])){
         fwrite($json_file,$mid_code);
         fclose($json_file);
 
-        $case_file = fopen("/server/user/".$name."/case_history/".$case_id."json","w");
+        $case_file = fopen("/server/user/".$name."/case_history/".$case_id.".json","w");
         fwrite($case_file,$mid_code);
         fclose($case_file);
 

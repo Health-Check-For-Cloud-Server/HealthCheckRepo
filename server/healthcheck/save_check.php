@@ -13,7 +13,7 @@ if (isset($_SESSION["user_name"])){
         $mid_code = $_POST['mid_code'];
 
         //save mid_code to file
-        $json_file = fopen("../user/".$user_name."/case_history/".$case_id."json","w");
+        $json_file = fopen("../user/".$user_name."/case_history/".$case_id.".json","w");
         fwrite($json_file,$mid_code);
         fclose($json_file);
 
