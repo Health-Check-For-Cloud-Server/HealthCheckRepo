@@ -2,9 +2,8 @@
  * Created by Hugh on 2015/4/22 0022.
  */
 $(function () {
-    $("#wrap_health_check").add_check_unit();
     $("#new_unit").click(function () {
-        $("#wrap_health_check").add_check_unit();
+        $("#wrap_health_check").add_an_empty_check_unit();
     });
     $("#check_health").click(function () {
         submit_mid_code(generate_mid_code());
@@ -37,7 +36,6 @@ function CheckMessage(check_code,check_true,check_false) {
     this.check_true = check_true;
     this.check_false = check_false;
 }
-
 function generate_mid_code() {
     var health_check = new HealthCheckObject();
 
@@ -121,6 +119,31 @@ function save(){
             }
         }
     });
+}
+
+function load_case(case_json) {
+    var _case = JSON.parse(case_json);
+    var healthcheck = _case['healthcheck'];
+    for (var x in healthcheck) {
+        var test = healthcheck[x]['test'];
+        var run = healthcheck[x]['run'];
+        var run_true = healthcheck[x]['run_true'];
+        var run_false = healthcheck[x]['run_false'];
+
+        var check_message = healthcheck[x]['check_message'];
+        for (var y in check_message) {
+            var check_code = check_message[y]['check_code'];
+            var check_true = check_message[y]['check_true'];
+            var check_false = check_message[y]['check_false'];
+        }
+    }
+
+}
+
+function stra(a){
+    if (arguments.length == 2){
+        alert(arguments[1]);
+    }
 }
 
 

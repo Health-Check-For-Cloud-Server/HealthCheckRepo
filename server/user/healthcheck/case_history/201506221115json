@@ -1,1 +1,1 @@
-{"healthcheck":[{"test":"0","run":"java","run_true":"","run_false":"","check_message":[{"check_code":"","check_true":"","check_false":""}]}]}
+{"healthcheck":[{"test":"1","run":"2","run_true":"3","run_false":"4","check_message":[{"check_code":"5","check_true":"6","check_false":"7"},{"check_code":"8","check_true":"9","check_false":"10"},{"check_code":"123","check_true":"123","check_false":"123"}]},{"test":"11","run":"12","run_true":"13","run_false":"14","check_message":[{"check_code":"15","check_true":"16","check_false":"17"}]}]}

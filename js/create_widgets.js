@@ -22,7 +22,7 @@ LABEL.JUDGEMENT = 3;
  * */
 var check_unit_count = 0;
 
-$.fn.add_check_unit = function () {
+$.fn.add_an_empty_check_unit = function () {
     var check_unit = $("<div class='check_unit'></div>");
 
     $(check_unit).add_label(++check_unit_count + "",LABEL.UNIT);
@@ -34,14 +34,55 @@ $.fn.add_check_unit = function () {
     });
 
     $(this).append(check_unit);
+    return check_unit;
+}
+$.fn.add_check_unit = function (info_check_unit) {
+    var check_unit = $("<div class='check_unit'></div>");
+    $(check_unit).add_label(++check_unit_count + "",LABEL.UNIT);
+    $(check_unit).add_test(info_check_unit['test']);
+    $(check_unit).add_run_unit(info_check_unit['run'],info_check_unit['run_true'],info_check_unit['run_false']);
+
+    var check_message = info_check_unit['check_message'];
+    for (var x in check_message){
+        var check = check_message[x];
+        $(check_unit).add_check(check['check_code'],check['check_true'],check['check_false']);
+    }
+
+    $(check_unit).add_more_check().click(function () {
+        $(check_unit).add_check();
+    });
+
+    $(this).append(check_unit);
 
     return check_unit;
+}
+
+
+
+$.fn.load_check_units = function (case_json) {
+    if(case_json != ""){
+        var _case = JSON.parse(case_json);
+        if(_case.length != 0){
+            var healthcheck = _case['healthcheck'];
+            if(healthcheck != null){
+                for (var x in healthcheck){
+                    $(this).add_check_unit(healthcheck[x]);
+                }
+                return;
+            }
+        }
+    }
+    $(this).add_an_empty_check_unit();
 }
 
 $.fn.add_test = function () {
     var test = $("<div class='test'></div>");
 
-    $(test).add_code_input(INPUT.TEST).add_label("Test Run",LABEL.RUN);
+    if(arguments.length == 1){
+        $(test).add_code_input(INPUT.TEST,arguments[0]).add_label("Test Run",LABEL.RUN);
+    }else{
+        $(test).add_code_input(INPUT.TEST).add_label("Test Run",LABEL.RUN);
+    }
 
     $(this).append(test);
 
@@ -51,9 +92,15 @@ $.fn.add_test = function () {
 $.fn.add_run_unit = function () {
     var run_unit = $("<div class='run_unit'></div>");
 
-    $(run_unit).add_code_input(INPUT.RUN).add_label("Run",LABEL.RUN);
-    $(run_unit).add_true_area();
-    $(run_unit).add_false_area();
+    if (arguments.length == 3){
+        $(run_unit).add_code_input(INPUT.RUN,arguments[0]).add_label("Run",LABEL.RUN);
+        $(run_unit).add_true_area(arguments[1]);
+        $(run_unit).add_false_area(arguments[2]);
+    }else{
+        $(run_unit).add_code_input(INPUT.RUN).add_label("Run",LABEL.RUN);
+        $(run_unit).add_true_area();
+        $(run_unit).add_false_area();
+    }
 
     $(this).append(run_unit);
 
@@ -63,9 +110,15 @@ $.fn.add_run_unit = function () {
 $.fn.add_check = function () {
     var check = $("<div class='check'></div>");
 
-    $(check).add_code_input(INPUT.CHECK).add_label("Check",LABEL.RUN);
-    $(check).add_true_area();
-    $(check).add_false_area();
+    if (arguments.length == 3){
+        $(check).add_code_input(INPUT.CHECK,arguments[0]).add_label("Check",LABEL.RUN);
+        $(check).add_true_area(arguments[1]);
+        $(check).add_false_area(arguments[2]);
+    }else{
+        $(check).add_code_input(INPUT.CHECK).add_label("Check",LABEL.RUN);
+        $(check).add_true_area();
+        $(check).add_false_area();
+    }
 
     $(this).append(check);
 
@@ -83,7 +136,11 @@ $.fn.add_more_check = function () {
 $.fn.add_true_area = function () {
     var true_area = $("<div class='true_area'></div>");
 
-    $(true_area).add_code_input(INPUT.DISPOSE).add_label("True",LABEL.JUDGEMENT);
+    if (arguments.length == 1){
+        $(true_area).add_code_input(INPUT.DISPOSE,arguments[0]).add_label("True",LABEL.JUDGEMENT);
+    }else{
+        $(true_area).add_code_input(INPUT.DISPOSE).add_label("True",LABEL.JUDGEMENT);
+    }
 
     $(this).append(true_area);
 
@@ -92,7 +149,11 @@ $.fn.add_true_area = function () {
 $.fn.add_false_area = function () {
     var false_area = $("<div class='false_area'></div>");
 
-    $(false_area).add_code_input(INPUT.DISPOSE).add_label("False",LABEL.JUDGEMENT);
+    if(arguments.length == 1){
+        $(false_area).add_code_input(INPUT.DISPOSE,arguments[0]).add_label("False",LABEL.JUDGEMENT);
+    }else{
+        $(false_area).add_code_input(INPUT.DISPOSE).add_label("False",LABEL.JUDGEMENT);
+    }
 
     $(this).append(false_area);
 
@@ -112,6 +173,10 @@ $.fn.add_code_input = function (INPUTMODE) {
         case INPUT.DISPOSE:
             var code_input = $("<input type='text' class='input_dispose' />");
             break;
+    }
+    if(arguments.length == 2){
+        var content = arguments[1];
+        $(code_input).attr("value",content);
     }
 
     $(this).append(code_input);
