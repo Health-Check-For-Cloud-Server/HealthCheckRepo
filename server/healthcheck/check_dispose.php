@@ -9,12 +9,14 @@
 session_start();
 if (isset($_SESSION["user_name"])){
     if($mid_code = $_POST['mid_code']) {
+        $name = $_SESSION['user_name'];
+        $case_id = $_SESSION['case_id'];
         $file_name = "./json_files/".time().".json";
         $json_file = fopen($file_name,"w");
         fwrite($json_file,$mid_code);
         fclose($json_file);
 
-        $case_file = fopen("/server/user/".$name."/case_history/".$case_id.".json","w");
+        $case_file = fopen($file_name,"w");
         fwrite($case_file,$mid_code);
         fclose($case_file);
 
@@ -24,7 +26,7 @@ if (isset($_SESSION["user_name"])){
 
         $result_str = "";
         foreach ($result as $x) {
-            if ($x != $result[0])
+            //if ($x != $result[0])
                 $result_str .= $x;
         }
 

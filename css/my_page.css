@@ -55,14 +55,19 @@ div#my_health_check ul{
     padding: 50px;
 }
 div#my_health_check li{
+    width: auto;
     margin: 10px;
     cursor: pointer;
+    width: 200px;
     list-style: none;
+
 }
 div#my_health_check li a{
     color: inherit;
 }
+
 div#my_health_check li:hover{
     text-decoration: underline;
     color: #18ba00;
+    list-style-image: url("../image/tag.gif");
 }

@@ -36,4 +36,11 @@
     height: 50px;
     line-height: 80px;
     text-shadow: 1px 1px 2px #333;
+    width: 300px;
+    margin: auto;
+}
+
+#case_title:hover{
+    text-decoration: underline;
+    cursor: default;
 }

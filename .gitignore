@@ -1,2 +1,6 @@
 .idea/
 .iml
+json_files/
+records/
+results/
+shell_files/
