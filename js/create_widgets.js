@@ -214,12 +214,6 @@ $.fn.add_label = function (content,LABELMODE) {
 }
 
 $.fn.add_del = function(DELMODE){
-    //switch (DELMODE) {
-    //    case DEL.UNIT:
-    //        break;
-    //    case DEL.CHECK:
-    //        break;
-    //}
     var del = $("<p class='del'>-</p>");
     $(this).append(del);
 
